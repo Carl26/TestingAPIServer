@@ -8,9 +8,9 @@ namespace ServerApi.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int RecordId { get; set; }
+        public int _id { get; set; }
 
-        public int Id { get; set; }
+        public int UserId { get; set; }
 
         [BsonElement("RecordTime")]
         public DateTime Time { get; set; }
