@@ -1,5 +1,2 @@
-TestingApiProject/Server/ServerApi/obj/ServerApi.csproj.nuget.cache
-TestingApiProject/Server/ServerApi/obj/ServerApi.csproj.nuget.dgspec.json
-TestingApiProject/Server/ServerApi/obj/Debug/netcoreapp2.2/ServerApi.assets.cache
-TestingApiProject/Server/ServerApi/obj/Debug/netcoreapp2.2/ServerApi.csproj.CoreCompileInputs.cache
-TestingApiProject/Server/ServerApi/obj/Debug/netcoreapp2.2/ServerApi.csprojAssemblyReference.cache
+TestingApiProject/Server/ServerApi/obj/
+TestingApiProject/Server/ServerApi/bin/
