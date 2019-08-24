@@ -13,7 +13,7 @@ namespace ServerApi.Models
         public int UserId { get; set; }
 
         [BsonElement("RecordTime")]
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
         public decimal Amount { get; set; }
         public string Description { get; set; }
     }
