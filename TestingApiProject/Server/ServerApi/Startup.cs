@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using ServerApi.Models;
+using ServerApi.Services;
 
 namespace ServerApi
 {
@@ -23,6 +24,10 @@ namespace ServerApi
             services.Configure<RecordDatabaseSettings>(Configuration.GetSection(nameof(RecordDatabaseSettings)));
 
             services.AddSingleton<IRecordDatabaseSettings>(x => x.GetRequiredService<IOptions<RecordDatabaseSettings>>().Value);
+
+            services.AddSingleton<IAccountService, AccountService>();
+
+            services.AddSingleton<IRecordService, RecordService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -6,7 +6,13 @@ using ServerApi.Models;
 
 namespace ServerApi.Services
 {
-    public class RecordService
+    public interface IRecordService
+    {
+        IList<Detail> GetRecordsByUserId(int userId);
+        IList<Detail> GetRecordsByTime(DateTime time, int userId);
+        Detail InsertRecord(Detail detail);
+    }
+    public class RecordService : IRecordService
     {
         private readonly IMongoCollection<Detail> _Records;
 
@@ -23,7 +29,12 @@ namespace ServerApi.Services
 
         public IList<Detail> GetRecordsByTime(DateTime time, int userId) {
             return _Records.Find<Detail>(x => (x.UserId == userId 
-                    && DateTime.Parse(x.Time, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal) <= time)).ToList();
+                    && DateTime.Parse(x.Time, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal) >= time)).ToList();
+        }
+
+        public Detail InsertRecord(Detail detail) {
+            _Records.InsertOne(detail);
+            return detail;
         }
     }
 }

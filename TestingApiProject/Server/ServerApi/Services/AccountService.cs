@@ -3,7 +3,11 @@ using ServerApi.Models;
 
 namespace ServerApi.Services
 {
-    public class AccountService 
+    public interface IAccountService
+    {
+        User GetUser(string username);
+    }
+    public class AccountService : IAccountService
     {
         private IMongoCollection<User> _Users;
         public AccountService(IRecordDatabaseSettings settings) 
