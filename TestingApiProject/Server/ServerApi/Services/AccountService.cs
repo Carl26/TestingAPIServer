@@ -6,6 +6,7 @@ namespace ServerApi.Services
     public interface IAccountService
     {
         User GetUser(string username);
+        User CreateUser(User newUser);
     }
     public class AccountService : IAccountService
     {
@@ -20,6 +21,11 @@ namespace ServerApi.Services
         public User GetUser(string username) 
         {
             return _Users.Find<User>(x => x.Username.Equals(username)).FirstOrDefault();
+        }
+
+        public User CreateUser(User newUser) {
+            _Users.InsertOne(newUser);
+            return newUser;
         }
     }
     
