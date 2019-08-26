@@ -7,7 +7,7 @@ namespace ServerApi.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int _Id { get; set; }
+        public string _Id { get; set; }
 
         public string Username { get; set; }
     }

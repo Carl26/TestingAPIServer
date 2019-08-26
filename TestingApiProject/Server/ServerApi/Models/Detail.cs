@@ -9,7 +9,7 @@ namespace ServerApi.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int _id { get; set; }
+        public string _id { get; set; }
 
         public int UserId { get; set; }
 
