@@ -4,11 +4,13 @@ using ServerApi.Services;
 
 namespace ServerApi.Controllers
 {
+    [Route("api/[controller]/[action]")]
+    [ApiController]
     public class AccountController 
     {
-        public AccountService AccountService { get; set; }
+        public IAccountService AccountService { get; set; }
 
-        public AccountController(AccountService service)
+        public AccountController(IAccountService service)
         {
             AccountService = service;
         }

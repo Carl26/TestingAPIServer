@@ -4,7 +4,7 @@ using ServerApi.Services;
 
 namespace ServerApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class RecordController : ControllerBase
     {
