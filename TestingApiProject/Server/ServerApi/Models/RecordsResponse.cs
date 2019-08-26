@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace ServerApi.Models
 {
-    public class GetDetailsResponse
+    public class RecordsResponse
     {
         public int UserId { get; set; }
-        public List<Detail> Details { get; set; }
+        public IList<Detail> Details { get; set; }
     }
 }
